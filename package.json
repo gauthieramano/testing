@@ -18,5 +18,8 @@
 	"bugs": {
 		"url": "https://github.com/gauthieramano/testing/issues"
 	},
-	"homepage": "https://github.com/gauthieramano/testing#readme"
+	"homepage": "https://github.com/gauthieramano/testing#readme",
+	"devDependencies": {
+		"typescript": "^5.9.3"
+	}
 }
