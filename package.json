@@ -1,0 +1,22 @@
+{
+	"name": "testing",
+	"version": "1.0.0",
+	"description": "Testing with Vitest",
+	"main": "index.js",
+	"scripts": {
+		"test": "vitest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/gauthieramano/testing.git"
+	},
+	"keywords": [
+		"testing"
+	],
+	"author": "Gauthier Amano",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/gauthieramano/testing/issues"
+	},
+	"homepage": "https://github.com/gauthieramano/testing#readme"
+}
