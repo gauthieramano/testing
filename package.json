@@ -20,6 +20,7 @@
 	},
 	"homepage": "https://github.com/gauthieramano/testing#readme",
 	"devDependencies": {
+		"@biomejs/biome": "2.2.5",
 		"typescript": "^5.9.3"
 	}
 }
