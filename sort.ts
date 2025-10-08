@@ -1,9 +1,9 @@
-type Result = RegExpExecArray & {
-  groups: {
-    word: string;
-    position: string;
-  };
+type Groups = {
+  word: string;
+  position: string;
 };
+
+type Result = RegExpExecArray & { groups: Groups };
 
 /**
  * WHEN:
@@ -21,6 +21,20 @@ type Result = RegExpExecArray & {
  */
 const REGEX = /(?<word>[a-zA-Z]*(?<position>\d+)[a-zA-Z]*)\s?/g;
 
+class Word extends String {
+  position: number;
+
+  constructor({ word, position }: Groups) {
+    super(word);
+
+    this.position = parseInt(position, 10);
+  }
+
+  [Symbol.toPrimitive]() {
+    return super.valueOf();
+  }
+}
+
 const isResult = (result: RegExpExecArray | null): result is Result => !!result;
 
 const getWordsGenerator = (words: string) => ({
@@ -32,12 +46,7 @@ const getWordsGenerator = (words: string) => ({
         break;
       }
 
-      const { word, position } = result.groups;
-
-      yield {
-        word,
-        position: parseInt(position, 10),
-      };
+      yield new Word(result.groups);
     }
   },
 });
@@ -45,7 +54,6 @@ const getWordsGenerator = (words: string) => ({
 const order = (words: string) =>
   Array.from(getWordsGenerator(words))
     .sort((a, b) => a.position - b.position)
-    .map(({ word }) => word)
     .join(" ");
 
 // returns "Fo1r the2 g3ood 4of th5e pe6ople e11evEn"
