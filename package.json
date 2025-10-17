@@ -21,6 +21,7 @@
   "homepage": "https://github.com/gauthieramano/testing#readme",
   "devDependencies": {
     "@biomejs/biome": "2.2.5",
+    "@getgrit/cli": "^0.1.0-alpha.1743007075",
     "typescript": "^5.9.3",
     "vitest": "^3.2.4"
   }
