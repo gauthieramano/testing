@@ -1,0 +1,11 @@
+{
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "\\.(js|jsx|ts|tsx)$",
+        "cmd": "npm run grit-and-biome -- ${file}",
+        "autoShowOutputPanel": "error"
+      }
+    ]
+  }
+}
