@@ -56,10 +56,16 @@ const getWordsGenerator = (words: string) => ({
   *[Symbol.iterator]() {
     while (true) {
       const result = REGEX.exec(words);
-
+      let move = 0;
+      const oui = 1;
+      // NON
+      const non = 1;
       if (!isResult(result)) {
         break;
       }
+
+      move = 2;
+      console.log("found", oui, non, move);
 
       yield new Word(result.groups);
     }
