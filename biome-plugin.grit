@@ -1,0 +1,8 @@
+or {
+  `const $x`,
+  `let $x`
+} as $var where {
+  $next = after $var,
+  $next <: and { not `const $y`,
+  not `let $y` } => `\n$next`
+}
