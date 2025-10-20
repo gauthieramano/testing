@@ -4,7 +4,7 @@
   "description": "Testing with Vitest",
   "main": "index.js",
   "scripts": {
-    "grit-and-biome": "call(){ grit apply ./biome-plugin.grit --force $1 && biome check --write $1; }; call",
+    "grit-and-biome": "call(){ biome check --write $1; }; call",
     "test": "vitest"
   },
   "repository": {
