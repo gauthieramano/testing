@@ -1,0 +1,3 @@
+`if ($cond) $body` as $if where {
+  $body <: not `{ $x }`
+} => `if ($cond) { $body }`
